@@ -1,0 +1,157 @@
+<script>
+
+
+let food_1_name  = "Pizza"
+let food_1_price = 75.00
+let food_1_q     = 12
+let food_2_name  = "Salad"
+let food_2_price = 25.00
+let food_2_q     = 7
+let food_3_name  = "Soup"
+let food_3_price = 20.00
+let food_3_q     = 3
+
+let currency = "MDL"
+
+
+// parseInt - functia parseza un element de tip string si returneaza number (mai degraba integer, din cite am observat) cu baza specifica radix 
+
+// (daca stringul incepe cu 0x - radix este 16[hexadecimal]
+// daca stringul incepe cu 0 -radix este 8[octal]
+// daca stringul incepe cu cifra, alta decit 0 -radix este[10]- radix 10 este baza by default, atunci cind nu specificam in browserele moderne. Totusi pot aparea diferente de afisare a rezultatului daca nu indicam si radixul.
+
+// De aceea parsInt(9.1)--->(9.99999) va afisa tot 9
+// )
+
+
+
+// ${identifier} joaca rolul de a identifica variablie functii sau proprietati.
+
+
+alert(
+`################# MENU ##################
+        1.${food_1_name}: ${food_1_price} ${currency} at the moment we have ${food_1_q} portions
+        2.${food_2_name}: ${food_2_price} ${currency} at the moment we have ${food_2_q} portions
+        3.${food_3_name}: ${food_3_price} ${currency} at the moment we have ${food_3_q} portions
+################# MENU ##################`
+    )
+
+    //Conditions in order to interact with the client and the food quantity 
+
+food_1_quantity = parseInt( prompt(`How many "${food_1_name}" do you want?`) )
+    if (food_1_quantity > food_1_q){ 
+        alert(` Sorry but we have only ${food_1_q} portions available.`)
+        let answer = prompt(`Would you like the take all the portions?`)
+        if (answer=="yes"){
+            food_1_quantity==food_1_q
+            alert(`Ok, we pack all the ${food_1_name}`)
+        }else if(answer=="no"){
+            alert (`No problem, please continue with other foods`)
+            food_1_quantity=0
+        }else{
+            alert(`Wrong answer. You didn't choose any portion`)
+            food_1_quantity=0
+        }
+    }
+
+////////////////////////////////////////////////////////////////////
+food_2_quantity = parseInt( prompt(`How many "${food_2_name}" do you want?`) )
+if (food_2_quantity > food_2_q){ 
+        alert(` Sorry but we have only ${food_2_q} portions available.`)
+        let answer = prompt(`Would you like the take all the portions?`)
+        if (answer=="yes"){
+            food_2_quantity==food_2_q
+            alert(`Ok, we pack all the ${food_2_name}`)
+        }else if(answer=="no"){
+            alert (`No problem, please continue with other foods`)
+            food_2_quantity=0
+        }else{
+            alert(`Wrong answer. You didn't choose any portion`)
+            food_2_quantity=0
+        }}
+
+////////////////////////////////////////////////////////////////////
+food_3_quantity = parseInt( prompt(`How many "${food_3_name}" do you want?`) )
+if (food_3_quantity > food_3_q){ 
+        alert(` Sorry but we have only ${food_3_q} portions available.`)
+        let answer = prompt(`Would you like the take all the portions?`)
+        if (answer=="yes"){
+            food_3_quantity==food_3_q
+            alert(`Ok, we pack all the ${food_3_name}`)
+        }else if(answer=="no"){
+            alert (`No problem, please continue with other foods`)
+            food_3_quantity=0
+        }else{
+            alert(`Wrong answer. You didn't choose any portion`)
+            food_3_quantity=0
+        }}
+////////////////////////////////////////////////////////////////////
+
+cost_1 = food_1_price * food_1_quantity
+cost_2 = food_2_price * food_2_quantity
+cost_3 = food_3_price * food_3_quantity
+
+cost_TOTAL  = cost_1 + cost_2 + cost_3
+let free_Delivery = cost_TOTAL
+const delivery = 50 
+let delivery_Answer=prompt(`Do you need delivery?`)
+
+//Conditions in order to interact with the client if he/she wants delivery
+if (delivery_Answer=="yes" && free_Delivery>200){
+    delivery==0
+    alert(
+`############### BILL ####################
+    1. ${food_1_name} x ${food_1_quantity}= ${cost_1.toFixed(2)} ${currency}
+    2. ${food_2_name} x ${food_2_quantity}= ${cost_2.toFixed(2)} ${currency}
+    3. ${food_3_name} x ${food_3_quantity}= ${cost_3.toFixed(2)} ${currency}
+------------------------------------------------
+    Total= ${cost_TOTAL.toFixed(2)}${currency}
+    You have free delivery
+############### BILL ####################`
+    )
+////////////////////////////////////////////////////////////////////
+
+}else if(delivery_Answer=="no"){
+    alert(
+`############### BILL ####################
+    1. ${food_1_name} x ${food_1_quantity}= ${cost_1.toFixed(2)} ${currency}
+    2. ${food_2_name} x ${food_2_quantity}= ${cost_2.toFixed(2)} ${currency}
+    3. ${food_3_name} x ${food_3_quantity}= ${cost_3.toFixed(2)} ${currency}
+------------------------------------------------
+    Total= ${cost_TOTAL.toFixed(2)}${currency}
+    No delivery
+############### BILL ####################`
+    )
+
+////////////////////////////////////////////////////////////////////
+}else if(free_Delivery<200){
+    cost_TOTAL=cost_TOTAL+delivery
+
+    alert(
+`############### BILL ####################
+    1. ${food_1_name} x ${food_1_quantity}= ${cost_1.toFixed(2)} ${currency}
+    2. ${food_2_name} x ${food_2_quantity}= ${cost_2.toFixed(2)} ${currency}
+    3. ${food_3_name} x ${food_3_quantity}= ${cost_3.toFixed(2)} ${currency}
+------------------------------------------------
+    Total= ${cost_TOTAL.toFixed(2)}${currency}
+    Delivery cost= ${delivery}${currency}
+############### BILL ####################`
+    )
+
+////////////////////////////////////////////////////////////////////
+}else if(delivery_Answer!="yes" || delivery_Answer!="no"){
+    delivery==0
+
+    alert(
+`############### BILL ####################
+    1. ${food_1_name} x ${food_1_quantity}= ${cost_1.toFixed(2)} ${currency}
+    2. ${food_2_name} x ${food_2_quantity}= ${cost_2.toFixed(2)} ${currency}
+    3. ${food_3_name} x ${food_3_quantity}= ${cost_3.toFixed(2)} ${currency}
+------------------------------------------------
+    Total= ${cost_TOTAL.toFixed(2)}${currency}
+    Undifined delivery answer. Please contact the suplier.
+############### BILL ####################`
+    )}
+////////////////////////////////////////////////////////////////////
+</script>
+

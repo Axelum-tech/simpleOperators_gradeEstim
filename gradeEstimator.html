@@ -1,0 +1,110 @@
+<script>
+   let grade1=parseInt(prompt("Your first grade!"))
+   let grade2=parseInt(prompt("Your second grade!"))
+   let grade3=parseInt(prompt("Your third grade!"))
+    
+
+   average=(grade1 + grade2 +grade3)/3
+
+if (average>=1 && average<=4 && grade1>0 && grade2>0 && grade3>0 && grade1<11 && grade2<11 && grade3<11){
+    alert("Very Bad!")
+    document.write( 
+    
+    `<div style=
+        "text-align:center;
+        margin-top:10em;"> 
+            <h3>You can not apply for any university</h3>
+            <img src="https://icons.iconarchive.com/icons/designbolts/despicable-me-2/128/Minion-Sad-icon.png" alt="">
+    </div>`
+    )
+
+}else if(average>=5 && average<=6){
+    alert("Bad!")
+    document.write(
+`<div style=
+        "text-align:center;
+        margin-top:10em;">
+            ############## Uniersity you can apply ############
+            <h3 style="color:red;" >1. University A</h3><img style="position:absolute; top:8em;right:30em" src="https://icons.iconarchive.com/icons/designbolts/despicable-me-2/128/Minion-Reading-icon.png" alt=""> <br>
+            <h4 style="color:grey;" >2. University B</h4><br>
+            <h4 style="color:grey;" >3. University C</h4><br>
+            <h4 style="color:grey;" >4. University D</h4><br>
+            <h4 style="color:grey;" >5. University E</h4><br>
+</div>
+`
+)
+
+}else if(average>=7 && average<=8 && grade1>0 && grade2>0 && grade3>0 && grade1<11 && grade2<11 && grade3<11){
+    alert("OK!")
+    document.write(
+    `<div style=
+        "text-align:center;
+        margin-top:10em;">
+            ############## Uniersity you can apply ############
+            <h3 style="color:red;" >1. University A</h3><br>
+            <h3 style="color:red;" >2. University B</h3><br><img style="position:absolute; top:8em;right:30em" src="https://icons.iconarchive.com/icons/designbolts/despicable-me-2/128/Minion-Reading-icon.png" alt=""> <br>
+            <h4 style="color:grey;" >3. University C</h4><br>
+            <h4 style="color:grey;" >4. University D</h4><br>
+    </div>
+    `)
+
+}else if(average>=8 && average<=9 && grade1>0 && grade2>0 && grade3>0 && grade1<11 && grade2<11 && grade3<11){
+    alert("GOOD!")
+    document.write(
+    `<div style=
+        "text-align:center;
+        margin-top:10em;">
+            ############## Uniersity you can apply ############
+            <h3 style="color:red;" >1. University A</h3><br>
+            <h3 style="color:red;" >2. University B</h3><br>
+            <h3 style="color:red;" >3. University C</h3><br><img style="position:absolute; top:8em;right:30em" src="https://icons.iconarchive.com/icons/designbolts/despicable-me-2/128/Minion-Reading-icon.png" alt=""> <br>
+            <h4 style="color:grey;" >4. University D</h4><br>
+    </div>
+    `)
+
+
+}else if(average>=9 && average<=10 && grade1>0 && grade2>0 && grade3>0 && grade1<11 && grade2<11 && grade3<11){
+    alert("EXCELLENT!")
+    document.write(
+    `<div style=
+        "text-align:center;
+        margin-top:10em;">
+        ############## Uniersity you can apply ############
+        <h3 style="color:red;" >1. University A</h3><br>
+        <h3 style="color:red;" >2. University B</h3><br>
+        <h3 style="color:red;" >3. University C</h3><br>
+        <h3 style="color:red;" >4. University D</h3><br>
+
+            <div style="color:blue; font-weight:bold">    
+                <h2>CONGRATULATIONS!</h2><img style="position:absolute; top:35em;right:40em" src="https://icons.iconarchive.com/icons/designbolts/despicable-me-2/128/Minion-Duck-icon.png" alt=""> <br>
+                               
+            </div>
+        </div>
+        `)
+}else {
+    alert("You've made a mistake. Please refresh the page and try again")
+    document.write(
+    `<div style=
+        "text-align:center;
+        margin-top:10em;">
+        <img style="position:absolute; top:10em;right:40em" src="https://icons.iconarchive.com/icons/papirus-team/papirus-status/128/dialog-error-icon.png" alt=""> <br>                  
+            
+    </div>
+        `)
+}
+
+
+
+
+
+ 
+
+</script>
+
+
+
+
+<!-- <div>
+    <img src="https://icons.iconarchive.com/icons/dapino/event-people/128/trumpet-icon.png" alt="">
+</div> -->
+
